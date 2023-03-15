@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array to string</title>
+    </head>
+    <body>
+        <h1> add string to Array</h1>
+        <input type="text" id="input">
+        <button onclick="addValue()"> Add </button>
+        <button onclick="showValue()"> Display </button>
+        <button onclick="arrToStr()"> show arry new </button>
+        <hr>
+        <div id="showResult"></div>
+    </body>
+    <script>
+    let array = Array();
+    let str = ''
+    function addValue() {
+      let input = document.getElementById("input").value;
+      array.push(input);
+      document.getElementById("input").value = ''
+        }
+    function showValue() {
+        document.getElementById('showResult').innerHTML= "["+array+"]"
+    }
+    function arrToStr(){
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 2 === 0 && array[i+1] % 2 === 0) {
+                array[i] = array[i] + '-'
+            }
+        }
+        document.getElementById('showResult').innerHTML = array.join('')
+    }
+  </script>
+</html>
